@@ -1,0 +1,24 @@
+.container-fluid{    
+    padding-left: 60px;
+    padding-top: 10px;    
+}
+
+.pchart{    
+    height: 400px;
+}
+
+.mat-raised-buton{    
+    margin-top: 10px;
+}
+
+.example-full-width{
+    width:100%;
+}
+
+.btn{
+    margin: 10px;
+}
+
+.circlePosition{
+    padding-left: 340px;
+}

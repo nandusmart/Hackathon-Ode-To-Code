@@ -1,0 +1,20 @@
+<div>
+    <mat-toolbar color="primary">
+        <span>Mood & Sentiment Analyzer</span>
+        <span class="teamName">Team: Ode to Code</span>
+    </mat-toolbar>
+    
+    <mat-menu x-postion="before" #menu="matMenu">
+        <button mat-menu-item> Option 1</button>
+        <button mat-menu-item> Option 2</button>
+    </mat-menu>
+    
+    <mat-tab-group>
+        <mat-tab label="Users">
+            <app-users></app-users>
+        </mat-tab>
+        <mat-tab label="Organization">
+            <app-organization></app-organization>
+        </mat-tab>        
+    </mat-tab-group>
+</div>

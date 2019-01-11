@@ -1,0 +1,10 @@
+{
+  "/posts": {
+    "target": "http://cognitive-engine.cfapps.io",
+    "secure": true,
+    "pathRewrite": {
+    "^/posts": ""
+  },
+    "changeOrigin": true
+  }
+}

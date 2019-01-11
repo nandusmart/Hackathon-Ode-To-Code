@@ -1,0 +1,7 @@
+---
+applications:
+- name: ode2codeUI
+  buildpack: staticfile_buildpack
+  memory: 512M
+  instances: 1
+  path: dist

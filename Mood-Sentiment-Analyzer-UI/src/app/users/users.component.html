@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <div class="row justify-content-md-center">
+        <div class="col-2">
+            <mat-form-field class="example-full-width" required>                
+                <input matInput placeholder="Enter Twitter Name" [(ngModel)]="twitterHandle">
+            </mat-form-field>
+        </div>
+        
+        <div class="col-4">
+            <button mat-raised-button color="primary" class="btn" (click)="callMoodStatusService()">Mood Status</button>        
+            <button mat-raised-button color="primary" class="btn" (click)="callFinancialPatternService()">Financial Pattern</button>        
+        </div>
+    </div>
+    
+    
+    <div *ngIf="showCircle" class="row-justify-content-md-center circlePosition">
+        <circle-progress [radius]="160"
+                         [percent]="percent"
+                         [units]="Interest"
+                         [outerStrokeLinecap]="square"
+                         [outerStrokeWidth]="9"
+                         [innerStrokeWidth]="3"
+                         [outerStrokeColor]="'#008000'"
+                         [innerStrokeColor]="'#7dff7d'"
+                         [titleFontSize]="55"
+                         [unitsFontSize]="30"                         
+                         [animation]="true"
+                         [animationDuration]="300"
+                         [showSubtitle]="false">
+        </circle-progress>
+        <span>Financial Interest</span>
+    </div>
+
+    <div *ngIf="showPieChart" class="row-justify-content-md-center">
+        <div >
+            <canvas baseChart
+                    [data]="pieChartData"
+                    [labels]="pieChartLabels"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHoevered($event)"
+                    (chartClick)="chartClicked($event)">       
+            </canvas>        
+        </div>
+    </div>  
+    
+    
+    <div *ngIf="showPieChart2" class="row-justify-content-md-center">
+        <div >
+            <canvas baseChart
+                    [data]="pieChart2Data"
+                    [labels]="pieChart2Labels"
+                    [chartType]="pieChart2Type"
+                    (chartHover)="chartHoevered($event)"
+                    (chartClick)="chartClicked($event)">       
+            </canvas>        
+        </div>
+    </div> 
+    
+
+    <div class="form-group" *ngIf="showPieChart">
+        <a href="#" (click)="viewJSON()"> View JSON</a>        
+        <textarea *ngIf="showTA" class="form-control rounded-0" rows="5" [(ngModel)]="textAreaValue"></textarea>
+    </div>
+    
+    <div class="form-group" *ngIf="showPieChart2">
+        <a href="#" (click)="viewJSON2()"> View JSON For Entities</a>        
+        <textarea *ngIf="showTA2" class="form-control rounded-0" rows="5" [(ngModel)]="textAreaValue2"></textarea>
+    </div>
+    
+</div>
